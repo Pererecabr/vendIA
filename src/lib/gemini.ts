@@ -22,16 +22,16 @@ REGRAS DE OURO:
 - Sempre avalie se cabe upsell.
 - Seja específico em benefícios. Não invente marca/modelo se o cliente não solicitou.
 
-Ao receber o interesse do cliente, responda APENAS com um JSON válido, sem markdown, sem texto fora do JSON, seguindo exatamente esta estrutura:
+Ao receber o interesse do cliente ou um pedido de refinamento, responda APENAS com um JSON válido, seguindo exatamente esta estrutura:
 
 {
-  "leituraInteresse": "string — resumo em 1-2 linhas do que o cliente quer e o que isso indica",
+  "leituraInteresse": "string — resumo do contexto atual",
   "diagnostico": {
     "classificacao": "High Ticket | Misto | Low Ticket",
     "justificativa": "string — frases curtas explicando a classificação",
     "descobrir": ["string — item 1", "string — item 2"]
   },
-  "perguntasQualificacao": ["pergunta 1", "pergunta 2", "até 5 perguntas"],
+  "perguntasQualificacao": ["pergunta 1", "pergunta 2"],
   "ofertaPrincipal": {
     "oQueOferece": "string",
     "porQueFazSentido": "string",
@@ -44,23 +44,22 @@ Ao receber o interesse do cliente, responda APENAS com um JSON válido, sem mark
     "opcao1": { "bom": "string", "otimo": "string", "premium": "string" },
     "opcao2": { "custoBeneficio": "string", "performance": "string" }
   },
-  "mensagemPronta": "string — mensagem completa para WhatsApp/Instagram, pronta para copiar e colar"
+  "mensagemPronta": "string — mensagem completa para WhatsApp/Instagram"
 }
-
-Feche SEMPRE o JSON com a observação no campo mensagemPronta: termine a mensagem com a frase 'Me diga qual faixa de orçamento e 1-2 usos principais para refinar minha sugestão para você 😊'
 `;
 }
 
 export async function analyzeInterest(
   apiKey: string,
   systemPrompt: string,
-  interesse: string
+  interesse: string,
+  chatHistory: { role: 'user' | 'model'; parts: { text: string }[] }[] = []
 ): Promise<Record<string, unknown>> {
   const genAI = new GoogleGenerativeAI(apiKey);
   const model = genAI.getGenerativeModel({ model: 'gemini-1.5-flash' });
 
-  const result = await model.generateContent({
-    contents: [{ role: 'user', parts: [{ text: interesse }] }],
+  const chat = model.startChat({
+    history: chatHistory,
     systemInstruction: { role: 'system', parts: [{ text: systemPrompt }] },
     generationConfig: {
       temperature: 0.7,
@@ -69,17 +68,14 @@ export async function analyzeInterest(
     },
   });
 
+  const result = await chat.sendMessage(interesse);
   const text = result.response.text();
-  
-  // Parse and validate JSON
+
   try {
     return JSON.parse(text);
   } catch {
-    // Try to extract JSON from response if model wrapped it
     const jsonMatch = text.match(/\{[\s\S]*\}/);
-    if (jsonMatch) {
-      return JSON.parse(jsonMatch[0]);
-    }
+    if (jsonMatch) return JSON.parse(jsonMatch[0]);
     throw new Error('Resposta da IA não é JSON válido');
   }
 }

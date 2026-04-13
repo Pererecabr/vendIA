@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
+export const dynamic = 'force-dynamic';
 import { db } from '@/lib/db';
 import { users, negocios } from '@/lib/db/schema';
 import { cadastroSchema } from '@/lib/validations';
@@ -12,7 +13,7 @@ export async function POST(request: NextRequest) {
 
     if (!parsed.success) {
       return NextResponse.json(
-        { error: parsed.error.errors[0].message },
+        { error: parsed.error.issues[0].message },
         { status: 400 }
       );
     }
@@ -32,7 +33,8 @@ export async function POST(request: NextRequest) {
     const senhaHash = await bcrypt.hash(senha, 12);
 
     // Create user
-    const [newUser] = db.insert(users).values({ nome, email, senhaHash }).returning();
+    const newUser = db.insert(users).values({ nome, email, senhaHash }).returning().get();
+    if (!newUser) throw new Error('Falha ao criar usuário');
 
     // Create empty business config
     db.insert(negocios).values({ userId: newUser.id, ramo: '' }).run();

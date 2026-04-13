@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
+export const dynamic = 'force-dynamic';
 import { db } from '@/lib/db';
 import { negocios, produtos } from '@/lib/db/schema';
 import { getUserIdFromRequest } from '@/lib/auth/jwt';
@@ -40,7 +41,7 @@ export async function PUT(request: NextRequest) {
   const body = await request.json();
   const parsed = negocioSchema.safeParse(body);
   if (!parsed.success) {
-    return NextResponse.json({ error: parsed.error.errors[0].message }, { status: 400 });
+    return NextResponse.json({ error: parsed.error.issues[0].message }, { status: 400 });
   }
 
   const negocio = db.select().from(negocios).where(eq(negocios.userId, userId)).get();
