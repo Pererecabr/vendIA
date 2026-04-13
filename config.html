@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Settings - VendaIA</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&amp;family=DM+Sans:wght@400;500;700&amp;family=Plus+Jakarta+Sans:wght@400;600;700;800&amp;family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-surface-variant": "#434655",
+                        "outline-variant": "#c3c6d7",
+                        "primary-container": "#2563eb",
+                        "error": "#ba1a1a",
+                        "on-primary-fixed-variant": "#003ea8",
+                        "secondary-container": "#8a4cfc",
+                        "surface": "#faf8ff",
+                        "on-tertiary-container": "#bdffdc",
+                        "secondary": "#712ae2",
+                        "surface-container-lowest": "#ffffff",
+                        "inverse-on-surface": "#eef0ff",
+                        "tertiary-fixed-dim": "#68dba9",
+                        "surface-container-low": "#f2f3ff",
+                        "on-tertiary-fixed-variant": "#005137",
+                        "secondary-fixed-dim": "#d2bbff",
+                        "on-secondary-container": "#fffbff",
+                        "on-background": "#131b2e",
+                        "tertiary-fixed": "#85f8c4",
+                        "surface-bright": "#faf8ff",
+                        "surface-container-high": "#e2e7ff",
+                        "on-primary": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "primary-fixed-dim": "#b4c5ff",
+                        "on-tertiary-fixed": "#002114",
+                        "on-surface": "#131b2e",
+                        "inverse-primary": "#b4c5ff",
+                        "tertiary": "#006243",
+                        "on-primary-container": "#eeefff",
+                        "surface-variant": "#dae2fd",
+                        "surface-container": "#eaedff",
+                        "surface-tint": "#0053db",
+                        "on-error": "#ffffff",
+                        "primary": "#004ac6",
+                        "tertiary-container": "#007d57",
+                        "outline": "#737686",
+                        "primary-fixed": "#dbe1ff",
+                        "on-secondary-fixed": "#25005a",
+                        "secondary-fixed": "#eaddff",
+                        "background": "#faf8ff",
+                        "error-container": "#ffdad6",
+                        "on-secondary-fixed-variant": "#5a00c6",
+                        "on-error-container": "#93000a",
+                        "on-primary-fixed": "#00174b",
+                        "surface-container-highest": "#dae2fd",
+                        "inverse-surface": "#283044",
+                        "surface-dim": "#d2d9f4"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Plus Jakarta Sans"],
+                        "body": ["Manrope"],
+                        "label": ["Manrope"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Manrope', sans-serif;
+            background-color: #faf8ff;
+        }
+        .sora { font-family: 'Sora', sans-serif; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface min-h-screen">
+<!-- TopAppBar -->
+<header class="w-full top-0 sticky z-50 bg-[#faf8ff] dark:bg-slate-950 flex items-center justify-between px-6 h-16 w-full">
+<div class="flex items-center gap-4">
+<button class="text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-800 p-2 rounded-full transition-colors duration-200">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<h1 class="text-xl font-bold text-blue-600 dark:text-blue-400 sora tracking-tight">VendaIA</h1>
+</div>
+<div class="flex items-center gap-2">
+<div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center overflow-hidden border-2 border-primary-container/20">
+<img alt="User Profile" data-alt="high-quality minimalist avatar profile picture of a professional sales executive in a clean corporate setting with soft lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCNXEPLUD8Fb5mvyc2DBe2cjAAR5XQmIe3sOoKIujqSmXkX1gvlAt9AILpLyhw2PWkigB_H1Y0PJxC5m4VxCYsT3WV6TvIvQrmvDe-RNcPhWWuiSMmXmWEkNiFhVG95bd7r3VlQG1v9xRtYUt2GpBHKXY7esi0QLvilZclxfz4TX5huNjUeBNvHzrDV9Hg2zI3lDzVherNsQxrE-QyHPtuhkognLirGlWm11RIXdO7v3VLYTaod2PCfoEMkFrLjiu4pM9HdqSmBGSQ"/>
+</div>
+</div>
+</header>
+<main class="max-w-4xl mx-auto px-6 py-12 pb-32">
+<!-- Header Section -->
+<header class="mb-12">
+<h2 class="sora text-4xl font-extrabold tracking-tight text-on-surface mb-2">Settings</h2>
+<p class="text-on-surface-variant text-lg">Configure your AI engine and sales ticket preferences.</p>
+</header>
+<div class="space-y-8">
+<!-- Focus Stream: Ticket Preference -->
+<section class="bg-surface-container-low p-8 rounded-xl relative overflow-hidden">
+<div class="absolute top-0 left-0 w-1 h-full bg-primary-container"></div>
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-6">
+<div>
+<h3 class="sora text-xl font-bold text-on-surface mb-1">Strategy Focus</h3>
+<p class="text-on-surface-variant text-sm">Select the automation profile for your sales flow.</p>
+</div>
+<div class="flex bg-surface-container-highest p-1.5 rounded-full shadow-inner">
+<button class="px-6 py-2.5 rounded-full text-sm font-bold sora transition-all duration-300 bg-primary-container text-on-primary shadow-lg">
+                            Low Ticket
+                        </button>
+<button class="px-6 py-2.5 rounded-full text-sm font-bold sora transition-all duration-300 text-on-surface-variant hover:bg-surface-variant/50">
+                            High Ticket
+                        </button>
+</div>
+</div>
+<!-- Bento Style Details -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8">
+<div class="bg-surface-container-lowest p-5 rounded-lg">
+<span class="material-symbols-outlined text-primary mb-3">speed</span>
+<h4 class="sora font-semibold text-primary">Low Ticket (Active)</h4>
+<p class="text-xs text-on-surface-variant mt-1 leading-relaxed">Optimized for fast-volume leads, quick responses, and automated closing scripts.</p>
+</div>
+<div class="bg-surface-container-lowest/50 p-5 rounded-lg opacity-60">
+<span class="material-symbols-outlined text-secondary mb-3">diamond</span>
+<h4 class="sora font-semibold text-secondary">High Ticket</h4>
+<p class="text-xs text-on-surface-variant mt-1 leading-relaxed">Focuses on relationship building, deep discovery, and multi-touchpoint nurturing.</p>
+</div>
+</div>
+</section>
+<!-- API Configuration -->
+<section class="bg-surface-container-low p-8 rounded-xl relative overflow-hidden">
+<div class="absolute top-0 left-0 w-1 h-full bg-tertiary"></div>
+<div class="flex items-center justify-between mb-6">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center">
+<span class="material-symbols-outlined text-tertiary">key</span>
+</div>
+<div>
+<h3 class="sora text-xl font-bold text-on-surface">AI Engine</h3>
+<p class="text-on-surface-variant text-sm">Google AI Studio API Key</p>
+</div>
+</div>
+<div class="flex items-center gap-2 px-3 py-1 bg-tertiary-fixed rounded-full">
+<span class="w-2 h-2 rounded-full bg-tertiary animate-pulse"></span>
+<span class="text-[10px] font-bold text-on-tertiary-fixed uppercase tracking-wider">Active</span>
+</div>
+</div>
+<div class="relative">
+<input class="w-full bg-surface-container-high border-none rounded-lg px-4 py-4 text-on-surface font-mono text-sm focus:ring-2 focus:ring-primary-container transition-all" readonly="" type="password" value="sk-google-********************"/>
+<button class="absolute right-3 top-1/2 -translate-y-1/2 text-primary hover:bg-primary-container/10 p-2 rounded-md transition-colors">
+<span class="material-symbols-outlined text-lg">visibility</span>
+</button>
+</div>
+<div class="mt-4 flex justify-between items-center">
+<span class="text-[11px] text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">info</span>
+                        Connected to Gemini 1.5 Pro
+                    </span>
+<button class="text-primary sora font-bold text-sm hover:underline">Update Key</button>
+</div>
+</section>
+<!-- Advanced Toggles -->
+<section class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="bg-surface-container-low p-6 rounded-xl flex items-center justify-between">
+<div>
+<h4 class="sora font-bold text-on-surface">Auto-Sync Leads</h4>
+<p class="text-xs text-on-surface-variant">Update CRM every 5 minutes</p>
+</div>
+<div class="w-12 h-6 bg-primary-container rounded-full relative cursor-pointer">
+<div class="absolute right-1 top-1 w-4 h-4 bg-white rounded-full"></div>
+</div>
+</div>
+<div class="bg-surface-container-low p-6 rounded-xl flex items-center justify-between">
+<div>
+<h4 class="sora font-bold text-on-surface">Shadow Mode</h4>
+<p class="text-xs text-on-surface-variant">Analyze without replying</p>
+</div>
+<div class="w-12 h-6 bg-surface-container-highest rounded-full relative cursor-pointer">
+<div class="absolute left-1 top-1 w-4 h-4 bg-on-surface-variant rounded-full"></div>
+</div>
+</div>
+</section>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center pb-safe pt-2 px-4 bg-[#faf8ff]/80 dark:bg-slate-950/80 backdrop-blur-xl border-t border-slate-200/15 dark:border-slate-800/15 shadow-[0_-4px_24px_rgba(19,27,46,0.04)] z-50 md:hidden">
+<a class="flex flex-col items-center justify-center text-slate-500 dark:text-slate-400 px-5 py-1 scale-95 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-['DM_Sans'] text-xs font-medium">Dashboard</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-500 dark:text-slate-400 px-5 py-1 scale-95 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined">analytics</span>
+<span class="font-['DM_Sans'] text-xs font-medium">Analysis</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded-full px-5 py-1 scale-95 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">settings</span>
+<span class="font-['DM_Sans'] text-xs font-medium">Settings</span>
+</a>
+</nav>
+<!-- Desktop Nav Anchor (Hidden on Mobile) -->
+<div class="hidden md:flex fixed left-0 top-16 h-[calc(100vh-4rem)] w-72 flex-col p-6 bg-[#faf8ff] dark:bg-slate-950 border-r border-slate-100/10">
+<div class="mb-8 p-4 bg-surface-container rounded-2xl flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white">
+<span class="material-symbols-outlined">person_search</span>
+</div>
+<div>
+<p class="sora font-semibold text-on-surface">Sales Concierge</p>
+<p class="text-[10px] uppercase font-bold text-primary tracking-widest">VendaIA Pro</p>
+</div>
+</div>
+<nav class="space-y-2">
+<a class="flex items-center gap-4 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="sora font-semibold">Home</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">person_search</span>
+<span class="sora font-semibold">Leads</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">history</span>
+<span class="sora font-semibold">History</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 text-blue-700 dark:text-blue-300 bg-blue-50 dark:bg-blue-900/20 rounded-lg translate-x-1 transition-transform" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">settings</span>
+<span class="sora font-semibold">Settings</span>
+</a>
+</nav>
+<div class="mt-auto">
+<a class="flex items-center gap-4 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">help_outline</span>
+<span class="sora font-semibold">Support</span>
+</a>
+</div>
+</div>
+</body></html>

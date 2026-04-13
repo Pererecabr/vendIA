@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>VendaIA | Acesso Seguro</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&amp;family=DM+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-surface-variant": "#434655",
+                        "outline-variant": "#c3c6d7",
+                        "primary-container": "#2563eb",
+                        "error": "#ba1a1a",
+                        "on-primary-fixed-variant": "#003ea8",
+                        "secondary-container": "#8a4cfc",
+                        "surface": "#faf8ff",
+                        "on-tertiary-container": "#bdffdc",
+                        "secondary": "#712ae2",
+                        "surface-container-lowest": "#ffffff",
+                        "inverse-on-surface": "#eef0ff",
+                        "tertiary-fixed-dim": "#68dba9",
+                        "surface-container-low": "#f2f3ff",
+                        "on-tertiary-fixed-variant": "#005137",
+                        "secondary-fixed-dim": "#d2bbff",
+                        "on-secondary-container": "#fffbff",
+                        "on-background": "#131b2e",
+                        "tertiary-fixed": "#85f8c4",
+                        "surface-bright": "#faf8ff",
+                        "surface-container-high": "#e2e7ff",
+                        "on-primary": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "primary-fixed-dim": "#b4c5ff",
+                        "on-tertiary-fixed": "#002114",
+                        "on-surface": "#131b2e",
+                        "inverse-primary": "#b4c5ff",
+                        "tertiary": "#006243",
+                        "on-primary-container": "#eeefff",
+                        "surface-variant": "#dae2fd",
+                        "surface-container": "#eaedff",
+                        "surface-tint": "#0053db",
+                        "on-error": "#ffffff",
+                        "primary": "#004ac6",
+                        "tertiary-container": "#007d57",
+                        "outline": "#737686",
+                        "primary-fixed": "#dbe1ff",
+                        "on-secondary-fixed": "#25005a",
+                        "secondary-fixed": "#eaddff",
+                        "background": "#faf8ff",
+                        "error-container": "#ffdad6",
+                        "on-secondary-fixed-variant": "#5a00c6",
+                        "on-error-container": "#93000a",
+                        "on-primary-fixed": "#00174b",
+                        "surface-container-highest": "#dae2fd",
+                        "inverse-surface": "#283044",
+                        "surface-dim": "#d2d9f4"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Sora", "sans-serif"],
+                        "body": ["DM Sans", "sans-serif"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'DM Sans', sans-serif; }
+        .font-headline { font-family: 'Sora', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-surface text-on-surface flex min-h-screen items-center justify-center p-6">
+<div class="relative w-full max-w-md">
+<!-- Abstract Background Element for Modern Editorial feel -->
+<div class="absolute -top-24 -left-24 w-64 h-64 bg-primary-container/10 rounded-full blur-3xl"></div>
+<div class="absolute -bottom-24 -right-24 w-64 h-64 bg-secondary-container/10 rounded-full blur-3xl"></div>
+<!-- Main Card -->
+<main class="relative bg-surface-container-lowest rounded-3xl p-8 md:p-12 shadow-[0_24px_48px_-12px_rgba(19,27,46,0.08)] border border-outline-variant/15">
+<!-- Brand Anchor Header -->
+<div class="mb-10 text-center md:text-left">
+<h1 class="text-3xl font-headline font-extrabold tracking-tight text-primary mb-2">VendaIA</h1>
+<p class="text-on-surface-variant font-body font-medium">Bem-vindo de volta. Insira suas credenciais para acessar seu concierge de vendas.</p>
+</div>
+<!-- Login Form -->
+<form class="space-y-6">
+<!-- Input Group: Email -->
+<div class="space-y-1">
+<label class="block text-xs font-headline font-bold text-outline tracking-wider uppercase ml-1" for="email">E-mail Corporativo</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline text-xl">mail</span>
+<input class="w-full bg-surface-container-low border-none rounded-xl py-4 pl-12 pr-4 focus:ring-2 focus:ring-primary focus:bg-surface-container-lowest transition-all duration-200 text-on-surface placeholder:text-outline/60 font-body" id="email" placeholder="name@company.com" type="email"/>
+</div>
+</div>
+<!-- Input Group: Password -->
+<div class="space-y-1">
+<div class="flex justify-between items-center ml-1">
+<label class="block text-xs font-headline font-bold text-outline tracking-wider uppercase" for="password">Senha</label>
+<a class="text-xs font-body font-bold text-secondary hover:text-on-secondary-fixed-variant transition-colors" href="#">Esqueceu?</a>
+</div>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline text-xl">lock</span>
+<input class="w-full bg-surface-container-low border-none rounded-xl py-4 pl-12 pr-4 focus:ring-2 focus:ring-primary focus:bg-surface-container-lowest transition-all duration-200 text-on-surface placeholder:text-outline/60 font-body" id="password" placeholder="••••••••" type="password"/>
+</div>
+</div>
+<!-- Primary CTA -->
+<button class="w-full bg-primary hover:bg-on-primary-fixed-variant text-on-primary font-headline font-bold py-4 rounded-full shadow-lg shadow-primary/20 transition-all active:scale-[0.98] mt-4 flex items-center justify-center gap-2" type="submit">Entrar <span class="material-symbols-outlined text-lg">arrow_forward</span></button>
+</form>
+<!-- Secondary Action -->
+<div class="mt-10 pt-8 border-t border-outline-variant/10 text-center">
+<p class="text-on-surface-variant font-body">Novo na plataforma? <a class="text-primary font-headline font-bold ml-1 hover:underline decoration-2 underline-offset-4" href="#">Criar conta</a></p>
+</div>
+</main>
+<!-- Footer Note (Optional/Subtle) -->
+<footer class="mt-8 text-center">
+<div class="flex items-center justify-center gap-6 text-outline text-xs font-medium tracking-wide">
+<a class="hover:text-on-surface transition-colors" href="#">Política de Privacidade</a>
+<span class="w-1 h-1 bg-outline-variant rounded-full"></span>
+<a class="hover:text-on-surface transition-colors" href="#">Termos de Serviço</a>
+</div>
+</footer>
+</div>
+<!-- Decorative Bottom-Right Image Block (Editorial Asymmetry) -->
+<div class="fixed bottom-12 right-12 hidden lg:block max-w-[200px]">
+<div class="bg-surface-container rounded-2xl p-4 shadow-sm border border-outline-variant/10">
+<div class="w-full h-32 rounded-xl mb-3 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Modern professional office environment with minimalist furniture, soft blue and purple ambient lighting, and high-tech clean aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAnhJJpEcz-LuXpZTNYHPpqAFU4t9IYQ2GB1SMVyaHvN9VqnzVBL__zGbqW-sLUTy66HrmI9GKKPrdHsgav8KprKbTJhflAijVHr9uTlwuIj4MVgvHQcRqphROgIJe0osXINI0MkJKFtO0wNZOlRc703cL3aJPjZzRvpZjLU1RPvFb9S1zAVEsMJCPOtL7wYNi5GhkuXlzockPPVLym99oKJrhILSBK8AUMY2aGR8ikTEgantJXehTHUOXNFI3d3my5MyJdgYPaUQE"/>
+</div>
+<p class="text-[10px] font-headline font-bold text-secondary uppercase tracking-widest mb-1">VendaIA com IA</p>
+<p class="text-xs text-on-surface-variant leading-relaxed">Inteligência que acelera seu funil de vendas com precisão editorial.</p>
+</div>
+</div>
+</body></html>

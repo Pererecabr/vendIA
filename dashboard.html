@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>VendaIA | Sales Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&amp;family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&amp;family=Plus+Jakarta+Sans:wght@400;600;700&amp;family=Manrope:wght@400;500;600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-surface-variant": "#434655",
+                        "outline-variant": "#c3c6d7",
+                        "primary-container": "#2563eb",
+                        "error": "#ba1a1a",
+                        "on-primary-fixed-variant": "#003ea8",
+                        "secondary-container": "#8a4cfc",
+                        "surface": "#faf8ff",
+                        "on-tertiary-container": "#bdffdc",
+                        "secondary": "#712ae2",
+                        "surface-container-lowest": "#ffffff",
+                        "inverse-on-surface": "#eef0ff",
+                        "tertiary-fixed-dim": "#68dba9",
+                        "surface-container-low": "#f2f3ff",
+                        "on-tertiary-fixed-variant": "#005137",
+                        "secondary-fixed-dim": "#d2bbff",
+                        "on-secondary-container": "#fffbff",
+                        "on-background": "#131b2e",
+                        "tertiary-fixed": "#85f8c4",
+                        "surface-bright": "#faf8ff",
+                        "surface-container-high": "#e2e7ff",
+                        "on-primary": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "primary-fixed-dim": "#b4c5ff",
+                        "on-tertiary-fixed": "#002114",
+                        "on-surface": "#131b2e",
+                        "inverse-primary": "#b4c5ff",
+                        "tertiary": "#006243",
+                        "on-primary-container": "#eeefff",
+                        "surface-variant": "#dae2fd",
+                        "surface-container": "#eaedff",
+                        "surface-tint": "#0053db",
+                        "on-error": "#ffffff",
+                        "primary": "#004ac6",
+                        "tertiary-container": "#007d57",
+                        "outline": "#737686",
+                        "primary-fixed": "#dbe1ff",
+                        "on-secondary-fixed": "#25005a",
+                        "secondary-fixed": "#eaddff",
+                        "background": "#faf8ff",
+                        "error-container": "#ffdad6",
+                        "on-secondary-fixed-variant": "#5a00c6",
+                        "on-error-container": "#93000a",
+                        "on-primary-fixed": "#00174b",
+                        "surface-container-highest": "#dae2fd",
+                        "inverse-surface": "#283044",
+                        "surface-dim": "#d2d9f4"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Sora", "Plus Jakarta Sans"],
+                        "body": ["DM Sans", "Manrope"],
+                        "label": ["DM Sans", "Manrope"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .chat-scroll::-webkit-scrollbar {
+            width: 4px;
+        }
+        .chat-scroll::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .chat-scroll::-webkit-scrollbar-thumb {
+            background: #e2e7ff;
+            border-radius: 10px;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-surface font-body text-on-surface selection:bg-primary-fixed-dim overflow-hidden">
+<!-- Desktop Navigation Drawer -->
+<aside class="fixed inset-y-0 left-0 z-[60] flex flex-col p-6 h-full w-72 bg-[#faf8ff] dark:bg-slate-950 shadow-2xl rounded-r-3xl hidden md:flex">
+<div class="flex items-center gap-3 mb-10 px-2">
+<div class="w-10 h-10 rounded-xl bg-primary flex items-center justify-center text-white">
+<span class="material-symbols-outlined" data-icon="rocket_launch">rocket_launch</span>
+</div>
+<div>
+<h1 class="font-headline font-bold text-blue-600">VendaIA</h1>
+<p class="text-[10px] uppercase tracking-widest text-outline">Intelligent Canvas</p>
+</div>
+</div>
+<nav class="flex-1 space-y-2">
+<a class="flex items-center gap-4 px-4 py-3 text-blue-700 dark:text-blue-300 bg-blue-50 dark:bg-blue-900/20 rounded-lg transition-transform translate-x-1 font-headline font-semibold" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span>Início</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-colors duration-200 font-headline font-semibold" href="#">
+<span class="material-symbols-outlined" data-icon="person_search">person_search</span>
+<span>Leads</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-colors duration-200 font-headline font-semibold" href="#">
+<span class="material-symbols-outlined" data-icon="history">history</span>
+<span>Histórico</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-colors duration-200 font-headline font-semibold" href="#">
+<span class="material-symbols-outlined" data-icon="help_outline">help_outline</span>
+<span>Suporte</span>
+</a>
+</nav>
+<div class="mt-auto pt-6 border-t border-outline-variant/15">
+<div class="flex items-center gap-3 px-2">
+<img alt="User Profile" class="w-10 h-10 rounded-full object-cover" data-alt="professional headshot of a smiling male executive in a blue suit with soft office lighting background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBO0OlZCSAE3A8RuDyQbk8wzJUhU_lLbjQLzx8oWIkEVE4E2gw5t7Etudr-k22C4y9IOifk_iONwAwULnXawCpZgVFh4ljheiy4Q4LGiMb-UYYTYPfoZU5y8bvKQHUrYfSR4oE-JtuqulpKH7FThd4BAiaQ8cDM-jbSU5jVM-R7lgA4JuOxKbR2llkXdKqKUKCEed0Dbf6H3z5NrGMNmsCEkPmC1pKbzDV6rU0Zd7rcgQ_dhTH2xtXOpXLPkEAvFd4wNo4W0Xxibr8"/>
+<div class="flex flex-col">
+<span class="text-sm font-headline font-semibold text-on-surface">Concierge de Vendas</span>
+<span class="text-xs text-outline">VendaIA Pro</span>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="md:ml-72 flex flex-col h-screen relative bg-surface">
+<!-- Top App Bar -->
+<header class="w-full top-0 sticky z-50 flex items-center justify-between px-6 h-16 w-full bg-[#faf8ff] dark:bg-slate-950">
+<div class="flex items-center gap-4">
+<button class="md:hidden p-2 text-slate-500">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+<h2 class="font-['Sora'] font-bold tracking-tight text-xl text-blue-600 dark:text-blue-400">Painel</h2>
+</div>
+<div class="flex items-center gap-4">
+<div class="hidden sm:flex flex-col items-end mr-2">
+<span class="text-[10px] font-bold text-tertiary uppercase tracking-wider">Consulta Ativa</span>
+<span class="text-xs text-outline">Lead #8492 - Imobiliário</span>
+</div>
+<div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center overflow-hidden border-2 border-primary/20">
+<img alt="User Profile" class="w-full h-full object-cover" data-alt="professional headshot profile photo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB_euaS6jgU2rpwlozQsMkPKvenNQZ8tpivrQAlIBnXmXDH2omFDcoaqbWLz9thCEGuztJXacP_5suttBkqkp0xcXOcumz3MESULC2k71paE4JZe1-t2vJ_-1IxwnuHTq9jflbNXEbT3Bza5laYze5VbvmBp7u2jTJaQHEAENQ-M_ptRahl-hUP0E37uWHfuxc_gDVP7xgtqbJG5tziVtvs4LTc6K3PwkC0SGwNrEykyX3qviFhWt4dlK9rQnB1eC5qtyA7KNtuCCM"/>
+</div>
+</div>
+</header>
+<!-- Focus Stream (Chat Interface) -->
+<section class="flex-1 overflow-y-auto chat-scroll px-4 md:px-12 py-8 space-y-12 pb-32">
+<!-- Consultation Start -->
+<div class="flex flex-col items-center text-center max-w-lg mx-auto mb-16">
+<div class="w-16 h-16 bg-primary-container/10 rounded-full flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="auto_awesome">auto_awesome</span>
+</div>
+<h3 class="font-headline text-2xl font-bold mb-2">Nova Estratégia de Vendas Iniciada</h3>
+<p class="text-on-surface-variant text-sm">Nossa IA está analisando o perfil do lead para sugerir o melhor caminho de conversão para a campanha da Cobertura de Luxo.</p>
+</div>
+<!-- Assistant Message (Primary Blue) -->
+<div class="flex flex-col items-start max-w-2xl">
+<div class="flex items-center gap-2 mb-3">
+<div class="w-6 h-6 rounded-md bg-primary flex items-center justify-center text-[10px] text-white">AI</div>
+<span class="text-xs font-bold text-primary font-headline uppercase tracking-widest">ANÁLISE DO ASSISTENTE</span>
+</div>
+<div class="bg-primary text-on-primary p-6 rounded-2xl rounded-tl-none shadow-sm text-lg leading-relaxed font-medium">Com base na atividade recente do lead, ele tem buscado imóveis na faixa de €2M+. Sugiro iniciar com a vista exclusiva do terraço e o elevador privativo. Devo redigir a abordagem inicial?</div>
+</div>
+<!-- User Message -->
+<div class="flex flex-col items-end max-w-2xl ml-auto">
+<div class="flex items-center gap-2 mb-3">
+<span class="text-xs font-bold text-outline font-headline uppercase tracking-widest">SUA ENTRADA</span>
+<div class="w-6 h-6 rounded-full overflow-hidden">
+<img alt="Me" data-alt="close up profile headshot" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCvcTrx9X-dixhtSE6FhrBJb-rMmLU_JRx-ErPrNVg6-W-n_R3PgL14wtyeJKeeWkoh-ZORg4O01eOGYb6oOFXx5OBJvE5HYxw8mxwFM9GDmIV2xAzlinQJ5iOvodXJ45htPwQIYrtyWZOaazUKQ0WOK4QSxWh-crAJW6O8NQzPyHIq2SShkHXSdzC33DJOnrHPDsEpJ4KEEy3Uyu1bJz7GjsuJf0BLLSzxN2ic3WFE52V-XJ4vhdJPN533jNgOTWLb8b81OeZ3Ros"/>
+</div>
+</div>
+<div class="bg-surface-container-highest text-on-surface p-6 rounded-2xl rounded-tr-none text-lg leading-relaxed">Sim, mas certifique-se de enfatizar o sistema de automação residencial inteligente também. Ele mencionou anteriormente interesse em casas tecnológicas.</div>
+</div>
+<!-- The "Offer" Card (Tertiary Green Accent) -->
+<div class="max-w-2xl mx-auto">
+<div class="bg-surface-container-low p-8 rounded-lg border-l-4 border-tertiary shadow-sm">
+<div class="flex justify-between items-start mb-4">
+<div>
+<h4 class="font-headline font-bold text-xl text-tertiary">Proposta de Valor Redigida</h4>
+<p class="text-sm text-on-surface-variant">Pitch Estratégico v1.2</p>
+</div>
+<span class="material-symbols-outlined text-tertiary" data-icon="verified">verified</span>
+</div>
+<p class="text-on-surface mb-6 font-body italic leading-relaxed">"Experimente a interseção entre a grandeza arquitetônica e a tecnologia perfeita. Além das vistas panorâmicas da cidade, esta cobertura oferece um ecossistema totalmente integrado e impulsionado por IA, refletindo sua preferência por um estilo de vida verdadeiramente moderno..."</p>
+<div class="flex gap-4">
+<button class="bg-tertiary text-white px-6 py-3 rounded-full font-headline font-bold text-sm hover:opacity-90 transition-opacity flex items-center gap-2"><span class="material-symbols-outlined text-sm" data-icon="send">send</span> Enviar para o Lead</button>
+<button class="bg-surface-container-highest text-on-surface px-6 py-3 rounded-full font-headline font-bold text-sm hover:bg-surface-variant transition-colors">Editar Conteúdo</button>
+</div>
+</div>
+</div>
+<!-- Question Card (Amber Accent) -->
+<div class="max-w-2xl">
+<div class="bg-surface-container-low p-6 rounded-lg border-l-4 border-amber-500">
+<div class="flex items-center gap-3 mb-2">
+<span class="material-symbols-outlined text-amber-600" data-icon="lightbulb">lightbulb</span>
+<h4 class="font-headline font-bold text-amber-700">Refinamento Necessário</h4>
+</div>
+<p class="text-on-surface text-sm">Devo incluir também a documentação sobre a elegibilidade para isenção de impostos prediais para compradores internacionais?</p>
+</div>
+</div>
+</section>
+<!-- Fixed Chat Input Area -->
+<footer class="absolute bottom-0 left-0 right-0 p-4 md:p-8 bg-surface/80 backdrop-blur-xl">
+<div class="max-w-4xl mx-auto flex items-center gap-4 bg-surface-container-high rounded-full px-6 py-3 shadow-lg ring-1 ring-black/5">
+<button class="text-outline hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="add_circle">add_circle</span>
+</button>
+<input class="flex-1 bg-transparent border-none focus:ring-0 text-on-surface placeholder:text-outline/60 font-body py-2" placeholder="Diga à VendaIA o que fazer a seguir..." type="text"/>
+<div class="flex items-center gap-2">
+<button class="p-2 text-outline hover:text-primary">
+<span class="material-symbols-outlined" data-icon="mic">mic</span>
+</button>
+<button class="w-10 h-10 bg-primary text-white rounded-full flex items-center justify-center shadow-md hover:scale-105 active:scale-95 transition-transform">
+<span class="material-symbols-outlined" data-icon="arrow_upward">arrow_upward</span>
+</button>
+</div>
+</div>
+</footer>
+<!-- Mobile Bottom NavBar (Suppressed if Drawer is present, but provided as per logic if needed) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full flex justify-around items-center pb-safe pt-2 px-4 bg-[#faf8ff]/80 dark:bg-slate-950/80 backdrop-blur-xl z-50 rounded-t-2xl shadow-[0_-4px_24px_rgba(19,27,46,0.04)] border-t border-slate-200/15">
+<a class="flex flex-col items-center justify-center bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded-full px-5 py-1 scale-95 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="text-[10px] font-['DM_Sans'] font-medium">Painel</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-500 dark:text-slate-400 px-5 py-1 hover:text-blue-500 transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+<span class="text-[10px] font-['DM_Sans'] font-medium">Análise</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-500 dark:text-slate-400 px-5 py-1 hover:text-blue-500 transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="text-[10px] font-['DM_Sans'] font-medium">Configurações</span>
+</a>
+</nav>
+</main>
+<!-- Floating Action Button (Supressed on Details/Dashboards per rules, but showing context) -->
+<!-- Not rendered to prioritize the Chat Stream -->
+</body></html>
