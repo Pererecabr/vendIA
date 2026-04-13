@@ -34,3 +34,8 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# SQLite database
+vendaia.db
+vendaia.db-wal
+vendaia.db-shm
