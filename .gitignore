@@ -39,3 +39,6 @@ next-env.d.ts
 vendaia.db
 vendaia.db-wal
 vendaia.db-shm
+
+# Logs
+dev.log
